@@ -13,6 +13,13 @@ namespace Codewars_Mumbling
             AccumulShouldBe(s, "B");
         }
 
+        [TestMethod]
+        public void s_is_bc_Accum_should_be_B_Cc()
+        {
+            var s = "bc";
+            AccumulShouldBe(s,"B-Cc");
+        }
+
         private static void AccumulShouldBe(string s, string expected)
         {
             Assert.AreEqual(expected, Accumul.Accum(s));
