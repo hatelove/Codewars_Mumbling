@@ -1,5 +1,6 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
+using System.Linq;
 
 namespace Codewars_Mumbling
 {
@@ -36,7 +37,7 @@ namespace Codewars_Mumbling
         public void s_is_BcE_Accum_should_be_B_Cc_Eee()
         {
             var s = "BcE";
-            AccumulShouldBe(s,"B-Cc-Eee");
+            AccumulShouldBe(s, "B-Cc-Eee");
         }
     }
 
@@ -44,13 +45,12 @@ namespace Codewars_Mumbling
     {
         public static String Accum(string s)
         {
-            var final = string.Empty;
-
-            for (int i = 0; i < s.Length; i++)
-            {
-                var c = s[i];
-                final += RepeatAndUpper(c, i + 1) + "-";
-            }
+            var repeatTime = 0;
+            var final = s.Aggregate("", (seed, c) =>
+              {
+                  repeatTime++;
+                  return seed + RepeatAndUpper(c, repeatTime) + "-";
+              });
 
             return final.TrimEnd('-');
         }
