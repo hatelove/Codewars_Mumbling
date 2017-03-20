@@ -10,7 +10,12 @@ namespace Codewars_Mumbling
         public void s_is_b_Accum_should_be_B()
         {
             var s = "b";
-            Assert.AreEqual("B", Accumul.Accum(s));
+            AccumulShouldBe(s, "B");
+        }
+
+        private static void AccumulShouldBe(string s, string expected)
+        {
+            Assert.AreEqual(expected, Accumul.Accum(s));
         }
     }
 
