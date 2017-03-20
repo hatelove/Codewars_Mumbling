@@ -19,7 +19,7 @@ namespace Codewars_Mumbling
         public static String Accum(string s)
         {
             // your code
-            throw new NotImplementedException();
+            return s.ToUpper();
         }
     }
 }
