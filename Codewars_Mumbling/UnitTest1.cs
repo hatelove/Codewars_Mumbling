@@ -46,6 +46,11 @@ namespace Codewars_Mumbling
             {
                 var temp = s[0] + "-" + s[1];
                 final = ToUpper(temp) + s[1];
+
+                if (s.Length == 3)
+                {
+                    final += "-" + s[2].ToString().ToUpper() + s[2].ToString() + s[2].ToString();
+                }
             }
 
             return final;
