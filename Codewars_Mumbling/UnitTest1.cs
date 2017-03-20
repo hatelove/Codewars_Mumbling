@@ -43,7 +43,7 @@ namespace Codewars_Mumbling
 
     public class Accumul
     {
-        public static String Accum(string s)
+        public static string Accum(string s)
         {
             var repeatTime = 0;
             var final = s.Aggregate("", (seed, c) =>
