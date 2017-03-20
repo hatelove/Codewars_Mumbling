@@ -38,22 +38,25 @@ namespace Codewars_Mumbling
         public static String Accum(string s)
         {
             var final = string.Empty;
-            if (s.Length == 1)
-            {
-                final = ToUpper(s);
-            }
-            else
-            {
-                var temp = s[0] + "-" + s[1];
-                final = ToUpper(temp) + s[1];
 
-                if (s.Length == 3)
-                {
-                    final += "-" + s[2].ToString().ToUpper() + s[2].ToString() + s[2].ToString();
-                }
+            for (int i = 0; i < s.Length; i++)
+            {
+                var c = s[i];
+                final += RepeatAndUpper(c, i + 1) + "-";
             }
 
-            return final;
+            return final.TrimEnd('-');
+        }
+
+        private static string RepeatAndUpper(char c, int repeatTimes)
+        {
+            var result = c.ToString().ToUpper();
+            for (int i = 1; i < repeatTimes; i++)
+            {
+                result += c.ToString();
+            }
+
+            return result;
         }
 
         private static string ToUpper(string temp)
