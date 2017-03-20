@@ -31,6 +31,13 @@ namespace Codewars_Mumbling
             var s = "bce";
             AccumulShouldBe(s, "B-Cc-Eee");
         }
+
+        [TestMethod]
+        public void s_is_BcE_Accum_should_be_B_Cc_Eee()
+        {
+            var s = "BcE";
+            AccumulShouldBe(s,"B-Cc-Eee");
+        }
     }
 
     public class Accumul
