@@ -50,18 +50,14 @@ namespace Codewars_Mumbling
 
         private static string RepeatAndUpper(char c, int repeatTimes)
         {
-            var result = c.ToString().ToUpper();
+            var stringCharacter = c.ToString();
+            var result = stringCharacter.ToUpper();
             for (int i = 1; i < repeatTimes; i++)
             {
-                result += c.ToString();
+                result += stringCharacter;
             }
 
             return result;
-        }
-
-        private static string ToUpper(string temp)
-        {
-            return temp.ToUpper();
         }
     }
 }
