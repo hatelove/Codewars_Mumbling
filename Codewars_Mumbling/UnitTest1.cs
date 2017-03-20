@@ -24,6 +24,13 @@ namespace Codewars_Mumbling
         {
             Assert.AreEqual(expected, Accumul.Accum(s));
         }
+
+        [TestMethod]
+        public void s_is_bce_Accum_should_be_B_Cc_Eee()
+        {
+            var s = "bce";
+            AccumulShouldBe(s, "B-Cc-Eee");
+        }
     }
 
     public class Accumul
