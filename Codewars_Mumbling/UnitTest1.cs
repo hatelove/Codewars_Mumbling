@@ -1,5 +1,5 @@
-﻿using System;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System;
 
 namespace Codewars_Mumbling
 {
@@ -17,7 +17,7 @@ namespace Codewars_Mumbling
         public void s_is_bc_Accum_should_be_B_Cc()
         {
             var s = "bc";
-            AccumulShouldBe(s,"B-Cc");
+            AccumulShouldBe(s, "B-Cc");
         }
 
         private static void AccumulShouldBe(string s, string expected)
@@ -30,12 +30,23 @@ namespace Codewars_Mumbling
     {
         public static String Accum(string s)
         {
-            // your code
-            if (s.Length == 1) return s.ToUpper();
-            var target = s;
-            var temp =  target[0]+ "-"+target[1];
-            var final = temp.ToUpper() + target[1];
+            var final = string.Empty;
+            if (s.Length == 1)
+            {
+                final = ToUpper(s);
+            }
+            else
+            {
+                var temp = s[0] + "-" + s[1];
+                final = ToUpper(temp) + s[1];
+            }
+
             return final;
+        }
+
+        private static string ToUpper(string temp)
+        {
+            return temp.ToUpper();
         }
     }
 }
