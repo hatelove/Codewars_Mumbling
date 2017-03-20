@@ -31,7 +31,11 @@ namespace Codewars_Mumbling
         public static String Accum(string s)
         {
             // your code
-            return s.ToUpper();
+            if (s.Length == 1) return s.ToUpper();
+            var target = s;
+            var temp =  target[0]+ "-"+target[1];
+            var final = temp.ToUpper() + target[1];
+            return final;
         }
     }
 }
